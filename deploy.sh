@@ -16,6 +16,8 @@
 #  limitations under the License.
 #
 
+region=europe-west2
+
 cat <<END 
 ******** Welcome **********
 *
@@ -95,6 +97,7 @@ service_account_setup
 
 create_cloud_function () {
   gcloud functions deploy $function_name \
+    --region=$region \
   	--project=$project_id \
   	--runtime=python310 \
   	--service-account=$service_account_email \
@@ -127,7 +130,7 @@ function name is 'analytics_settings_downloader': " function_name
 cloud_function_setup
 
 echo "~~~~~~~~ Creating BigQuery Dataset ~~~~~~~~~~"
-bq mk -d $project_id:analytics_settings_database
+bq mk -d --location=$region $project_id:analytics_settings_database
 echo "~~~~~~~~ Creating BigQuery Tables ~~~~~~~~~~"
 cd schemas
 bq mk -t --time_partitioning_type=DAY \
@@ -201,6 +204,7 @@ echo "BigQuery tables created."
 
 create_cloud_scheduler () {
   gcloud scheduler jobs create http $scheduler_name \
+    --location=$region
   	--schedule "0 23 * * *" \
     --uri="$function_uri" \
   	--http-method=GET \
