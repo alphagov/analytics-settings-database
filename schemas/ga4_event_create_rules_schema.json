@@ -77,5 +77,10 @@
         "mode": "NULLABLE"
       }
     ]
+  },
+  {
+    "type": "JSON",
+    "name": "grouping_rule",
+    "mode": "NULLABLE"
   }
 ]

@@ -20,9 +20,9 @@
     "type": "STRING"
   },
   {
-    "mode": "NULLABLE",
+    "type": "JSON",
     "name": "dimension_filter_expression",
-    "type": "STRING"
+    "mode": "NULLABLE"
   },
   {
     "mode": "NULLABLE",
@@ -37,6 +37,11 @@
   {
     "mode": "NULLABLE",
     "name": "property_display_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "description",
     "type": "STRING"
   }
 ]
