@@ -1,0 +1,47 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "display_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "REPEATED",
+    "name": "dimension_names",
+    "type": "STRING"
+  },
+  {
+    "mode": "REPEATED",
+    "name": "metric_names",
+    "type": "STRING"
+  },
+  {
+    "type": "JSON",
+    "name": "dimension_filter_expression",
+    "mode": "NULLABLE"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "data_collection_start_time",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "property",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "property_display_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "description",
+    "type": "STRING"
+  }
+]
